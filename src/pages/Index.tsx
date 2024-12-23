@@ -5,11 +5,11 @@ import WhoisResult from "@/components/WhoisResult";
 import { useToast } from "@/components/ui/use-toast";
 
 const popularDomains = [
-  "google.com",
-  "facebook.com",
-  "twitter.com",
-  "microsoft.com",
-  "apple.com",
+  "Lovable.dev", 
+  "chatgpt.com", 
+  "x.com", 
+  "Github.com", 
+  "Lovable.app"
 ];
 
 const Index = () => {
@@ -133,7 +133,7 @@ const Index = () => {
       
       <footer className="text-center py-4 border-t border-neonBlue/30">
         <p className="text-sm text-white/60">
-          Made with Love ❤️ in <a href="https://lovable.app" target="_blank" rel="noopener noreferrer" className="text-neonBlue hover:underline">lovable.app</a>
+          Made with Love ❤️ in <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="text-neonBlue hover:underline">Lovable.dev</a>
         </p>
       </footer>
     </div>
