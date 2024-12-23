@@ -9,7 +9,7 @@ const Index = () => {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState([
     {
-      content: "Welcome to Mundial.AI! Enter a domain name to lookup its WHOIS information.",
+      content: "Welcome to Mundial.AI! Enter a domain name to lookup its WHOIS information. I can help you find details about any domain's registration, ownership, and DNS settings.",
       isBot: true,
     },
   ]);
@@ -66,33 +66,50 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-darkBg text-white p-4">
-      <div className="max-w-3xl mx-auto">
-        <div className="space-y-4 mb-8">
-          {messages.map((msg, idx) => (
-            <ChatMessage key={idx} {...msg} />
-          ))}
-          {loading && <LoadingSpinner />}
-          {whoisData && <WhoisResult data={whoisData} />}
-        </div>
+    <div className="flex flex-col min-h-screen bg-darkBg text-white">
+      <div className="flex-grow p-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="space-y-4 mb-8">
+            {messages.map((msg, idx) => (
+              <ChatMessage 
+                key={idx} 
+                {...msg} 
+                className={`text-lg ${
+                  idx % 4 === 0 ? 'text-[#ea384c]' :  // Red
+                  idx % 4 === 1 ? 'text-[#F97316]' :  // Orange
+                  idx % 4 === 2 ? 'text-[#FEF7CD]' :  // Yellow
+                  'text-[#1EAEDB]'                     // Blue
+                }`}
+              />
+            ))}
+            {loading && <LoadingSpinner />}
+            {whoisData && <WhoisResult data={whoisData} />}
+          </div>
 
-        <form onSubmit={handleSubmit} className="flex gap-2">
-          <input
-            type="text"
-            value={domain}
-            onChange={(e) => setDomain(e.target.value)}
-            placeholder="Enter domain name (e.g., example.com)"
-            className="flex-1 bg-white/5 border border-neonBlue/30 rounded-lg px-4 py-2 font-mono text-sm focus:outline-none focus:border-neonBlue"
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-6 py-2 rounded-lg font-mono text-sm hover:bg-neonBlue/20 transition-colors disabled:opacity-50"
-          >
-            Search
-          </button>
-        </form>
+          <form onSubmit={handleSubmit} className="flex gap-2">
+            <input
+              type="text"
+              value={domain}
+              onChange={(e) => setDomain(e.target.value)}
+              placeholder="Enter domain name (e.g., example.com)"
+              className="flex-1 bg-white/5 border border-neonBlue/30 rounded-lg px-4 py-2 font-mono text-lg focus:outline-none focus:border-neonBlue"
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-6 py-2 rounded-lg font-mono text-lg hover:bg-neonBlue/20 transition-colors disabled:opacity-50"
+            >
+              Search
+            </button>
+          </form>
+        </div>
       </div>
+      
+      <footer className="text-center py-4 border-t border-neonBlue/30">
+        <p className="text-sm text-white/60">
+          Made with Love ❤️ in <a href="https://lovable.app" target="_blank" rel="noopener noreferrer" className="text-neonBlue hover:underline">lovable.app</a>
+        </p>
+      </footer>
     </div>
   );
 };

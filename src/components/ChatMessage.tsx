@@ -20,11 +20,11 @@ const ChatMessage = ({ content, isBot = false, className }: ChatMessageProps) =>
         className={cn(
           "rounded-lg px-4 py-2 max-w-[80%]",
           isBot
-            ? "bg-neonBlue/10 text-neonBlue border border-neonBlue/30"
-            : "bg-white/5 text-white border border-white/10"
+            ? "bg-neonBlue/10 border border-neonBlue/30"
+            : "bg-white/5 border border-white/10"
         )}
       >
-        <p className="font-mono text-sm">{content}</p>
+        <p className={cn("font-mono", className)}>{content}</p>
       </div>
     </div>
   );
