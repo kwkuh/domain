@@ -70,11 +70,27 @@ export default {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        glowPulse: {
+          "0%, 100%": { 
+            boxShadow: "0 0 5px #00F0FF, 0 0 10px #00F0FF, 0 0 15px #00F0FF",
+            transform: "scale(1)"
+          },
+          "50%": { 
+            boxShadow: "0 0 10px #00F0FF, 0 0 20px #00F0FF, 0 0 30px #00F0FF",
+            transform: "scale(1.02)"
+          },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         typing: "typing 2s steps(40, end)",
         blink: "blink .75s step-end infinite",
         fadeIn: "fadeIn 0.5s ease-out forwards",
+        glowPulse: "glowPulse 2s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
       },
     },
   },

@@ -13,10 +13,10 @@ interface WhoisResultProps {
 
 const WhoisResult = ({ data }: WhoisResultProps) => {
   return (
-    <div className="font-mono text-sm bg-darkBg border border-neonBlue/30 rounded-lg p-4 space-y-2 animate-fadeIn opacity-0">
-      <div className="text-neonBlue">Domain Information:</div>
+    <div className="font-mono text-lg bg-darkBg border border-neonBlue/30 rounded-lg p-6 space-y-3 animate-fadeIn opacity-0 hover:animate-glowPulse">
+      <div className="text-neonBlue text-xl mb-4">Domain Information:</div>
       {Object.entries(data).map(([key, value]) => (
-        <div key={key} className="grid grid-cols-[120px,1fr] gap-4">
+        <div key={key} className="grid grid-cols-[160px,1fr] gap-4">
           <span className="text-white/60">{key}:</span>
           <span className="text-white">
             {Array.isArray(value) ? value.join(", ") : value}

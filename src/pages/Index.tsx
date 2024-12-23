@@ -4,6 +4,14 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import WhoisResult from "@/components/WhoisResult";
 import { useToast } from "@/components/ui/use-toast";
 
+const popularDomains = [
+  "google.com",
+  "facebook.com",
+  "twitter.com",
+  "microsoft.com",
+  "apple.com",
+];
+
 const Index = () => {
   const [domain, setDomain] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,10 +29,8 @@ const Index = () => {
     return pattern.test(domain);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!isValidDomain(domain)) {
+  const handleSearch = async (searchDomain: string) => {
+    if (!isValidDomain(searchDomain)) {
       toast({
         title: "Invalid domain",
         description: "Please enter a valid domain name (e.g., example.com)",
@@ -34,10 +40,10 @@ const Index = () => {
     }
 
     setLoading(true);
-    setMessages((prev) => [...prev, { content: domain, isBot: false }]);
+    setMessages((prev) => [...prev, { content: searchDomain, isBot: false }]);
 
     try {
-      const response = await fetch(`https://rdap.org/domain/${domain}`);
+      const response = await fetch(`https://rdap.org/domain/${searchDomain}`);
       const data = await response.json();
 
       const formattedData = {
@@ -65,16 +71,21 @@ const Index = () => {
     }
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSearch(domain);
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-darkBg text-white">
       <div className="flex-grow p-4">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="space-y-4 mb-8">
             {messages.map((msg, idx) => (
               <ChatMessage 
                 key={idx} 
                 {...msg} 
-                className={`text-lg ${
+                className={`text-xl ${
                   idx % 4 === 0 ? 'text-[#ea384c]' :  // Red
                   idx % 4 === 1 ? 'text-[#F97316]' :  // Orange
                   idx % 4 === 2 ? 'text-[#FEF7CD]' :  // Yellow
@@ -86,18 +97,33 @@ const Index = () => {
             {whoisData && <WhoisResult data={whoisData} />}
           </div>
 
+          <div className="mb-6">
+            <h2 className="text-xl font-mono text-neonBlue mb-4 animate-float">Popular Domains</h2>
+            <div className="flex flex-wrap gap-3">
+              {popularDomains.map((d) => (
+                <button
+                  key={d}
+                  onClick={() => handleSearch(d)}
+                  className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-4 py-2 rounded-lg font-mono text-lg hover:animate-glowPulse transition-all"
+                >
+                  {d}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit} className="flex gap-2">
             <input
               type="text"
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
               placeholder="Enter domain name (e.g., example.com)"
-              className="flex-1 bg-white/5 border border-neonBlue/30 rounded-lg px-4 py-2 font-mono text-lg focus:outline-none focus:border-neonBlue"
+              className="flex-1 bg-white/5 border border-neonBlue/30 rounded-lg px-4 py-2 font-mono text-xl focus:outline-none focus:border-neonBlue focus:animate-glowPulse"
             />
             <button
               type="submit"
               disabled={loading}
-              className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-6 py-2 rounded-lg font-mono text-lg hover:bg-neonBlue/20 transition-colors disabled:opacity-50"
+              className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-6 py-2 rounded-lg font-mono text-xl hover:animate-glowPulse transition-all disabled:opacity-50"
             >
               Search
             </button>
