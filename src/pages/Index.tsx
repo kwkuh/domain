@@ -3,6 +3,7 @@ import ChatMessage from "@/components/ChatMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import WhoisResult from "@/components/WhoisResult";
 import { useToast } from "@/components/ui/use-toast";
+import { Progress } from "@/components/ui/progress";
 
 const popularDomains = [
   "Lovable.dev", 
@@ -15,6 +16,7 @@ const popularDomains = [
 const Index = () => {
   const [domain, setDomain] = useState("");
   const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [messages, setMessages] = useState([
     {
       content: "Welcome to Mundial.AI! Enter a domain name to lookup its WHOIS information. I can help you find details about any domain's registration, ownership, and DNS settings.",
@@ -40,7 +42,18 @@ const Index = () => {
     }
 
     setLoading(true);
+    setProgress(0);
     setMessages((prev) => [...prev, { content: searchDomain, isBot: false }]);
+
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(progressInterval);
+          return 100;
+        }
+        return prev + 20;
+      });
+    }, 100);
 
     try {
       const response = await fetch(`https://rdap.org/domain/${searchDomain}`);
@@ -67,7 +80,12 @@ const Index = () => {
         variant: "destructive",
       });
     } finally {
-      setLoading(false);
+      clearInterval(progressInterval);
+      setProgress(100);
+      setTimeout(() => {
+        setLoading(false);
+        setProgress(0);
+      }, 500);
     }
   };
 
@@ -78,8 +96,15 @@ const Index = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-darkBg text-white">
-      <div className="flex-grow p-4">
+      <div className="flex-grow p-4 md:p-6">
         <div className="max-w-4xl mx-auto">
+          {/* Mac-style traffic lights */}
+          <div className="flex gap-2 mb-4">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+
           <div className="space-y-4 mb-8">
             {messages.map((msg, idx) => (
               <ChatMessage 
@@ -93,7 +118,12 @@ const Index = () => {
                 }`}
               />
             ))}
-            {loading && <LoadingSpinner />}
+            {loading && (
+              <div className="space-y-4">
+                <LoadingSpinner />
+                <Progress value={progress} className="w-full h-2" />
+              </div>
+            )}
             {whoisData && <WhoisResult data={whoisData} />}
           </div>
 
@@ -104,7 +134,7 @@ const Index = () => {
                 <button
                   key={d}
                   onClick={() => handleSearch(d)}
-                  className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-4 py-2 rounded-lg font-mono text-lg hover:animate-glowPulse transition-all"
+                  className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-4 py-2 rounded-lg font-mono text-base md:text-lg hover:animate-glowPulse transition-all"
                 >
                   {d}
                 </button>
@@ -112,18 +142,18 @@ const Index = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex gap-2">
+          <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-2">
             <input
               type="text"
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
               placeholder="Enter domain name (e.g., example.com)"
-              className="flex-1 bg-white/5 border border-neonBlue/30 rounded-lg px-4 py-2 font-mono text-xl focus:outline-none focus:border-neonBlue focus:animate-glowPulse"
+              className="flex-1 bg-white/5 border border-neonBlue/30 rounded-lg px-4 py-2 font-mono text-base md:text-xl focus:outline-none focus:border-neonBlue focus:animate-glowPulse"
             />
             <button
               type="submit"
               disabled={loading}
-              className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-6 py-2 rounded-lg font-mono text-xl hover:animate-glowPulse transition-all disabled:opacity-50"
+              className="bg-neonBlue/10 border border-neonBlue/30 text-neonBlue px-6 py-2 rounded-lg font-mono text-base md:text-xl hover:animate-glowPulse transition-all disabled:opacity-50"
             >
               Search
             </button>
