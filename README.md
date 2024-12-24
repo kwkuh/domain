@@ -1,0 +1,26 @@
+```
+$ whois domain
+
+% IANA WHOIS server
+% This query returned 1 object
+
+██████╗  ██████╗ ███╗   ███╗ █████╗ ██╗███╗   ██╗
+██╔══██╗██╔═══██╗████╗ ████║██╔══██╗██║████╗  ██║
+██║  ██║██║   ██║██╔████╔██║███████║██║██╔██╗ ██║
+██║  ██║██║   ██║██║╚██╔╝██║██╔══██║██║██║╚██╗██║
+██████╔╝╚██████╔╝██║ ╚═╝ ██║██║  ██║██║██║ ╚████║
+╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
+
+domain:       DOMAIN
+status:       ACTIVE
+status:       SHIPPING
+status:       COLLECTING
+created:      2024-12-24
+expires:      never
+
+registrant:   Kukuh Laksana
+country:      ID
+url:          https://kukuh.la
+
+source:       WHOIS.KUKUH.LA
+```
