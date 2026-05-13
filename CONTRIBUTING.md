@@ -12,7 +12,7 @@ First off, thank you. Domainer is built by and for domain investors — every PR
 ## Dev setup
 
 ```bash
-git clone https://github.com/kwkuh/domainer.git
+git clone https://github.com/kwkuh/domain-portfolio.git
 cd domainer
 cp .env.example .env  # paste a BOT_TOKEN from @BotFather
 npm install
@@ -59,7 +59,7 @@ Schema lives in `src/lib/db.ts`. Migrations are idempotent (`CREATE TABLE IF NOT
 
 ## Reporting security issues
 
-**Do not open public issues for security problems.** Use [GitHub Security Advisories](https://github.com/kwkuh/domainer/security/advisories/new). See [SECURITY.md](SECURITY.md).
+**Do not open public issues for security problems.** Use [GitHub Security Advisories](https://github.com/kwkuh/domain-portfolio/security/advisories/new). See [SECURITY.md](SECURITY.md).
 
 ## Code of conduct
 
