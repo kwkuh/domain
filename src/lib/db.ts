@@ -101,6 +101,17 @@ function migrate(d: Database.Database) {
       taken_at  TEXT DEFAULT CURRENT_TIMESTAMP
     );
 
+    CREATE TABLE IF NOT EXISTS team_members (
+      owner_id   INTEGER NOT NULL,
+      member_id  INTEGER NOT NULL,
+      handle     TEXT,
+      role       TEXT NOT NULL DEFAULT 'viewer',
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (owner_id, member_id)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_team_member ON team_members(member_id);
+
     CREATE TABLE IF NOT EXISTS subscribers (
       chat_id   INTEGER PRIMARY KEY,
       user_id   INTEGER NOT NULL,

@@ -17,6 +17,7 @@ import * as sales from "./commands/sales.js";
 import * as drop from "./commands/drop.js";
 import * as landing from "./commands/landing.js";
 import * as history from "./commands/history.js";
+import * as team from "./commands/team.js";
 
 const token = process.env.BOT_TOKEN;
 if (!token) {
@@ -60,6 +61,7 @@ sales.register(bot);
 drop.register(bot);
 landing.register(bot);
 history.register(bot);
+team.register(bot);
 
 bot.api.setMyCommands([
   { command: "help", description: "Show all commands" },
@@ -86,7 +88,7 @@ bot.api.setMyCommands([
 
 startCron(bot);
 
-console.log("🌐 domainer-bot starting…");
+console.log("🌐 domain starting…");
 bot.start({
   drop_pending_updates: true,
   onStart: (me) => console.log(`Listening as @${me.username}`),

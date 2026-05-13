@@ -1,4 +1,29 @@
-# 🌐 domainer-bot
+```
+$ whois domain
+
+% IANA WHOIS server
+% This query returned 1 object
+
+██████╗  ██████╗ ███╗   ███╗ █████╗ ██╗███╗   ██╗
+██╔══██╗██╔═══██╗████╗ ████║██╔══██╗██║████╗  ██║
+██║  ██║██║   ██║██╔████╔██║███████║██║██╔██╗ ██║
+██║  ██║██║   ██║██║╚██╔╝██║██╔══██║██║██║╚██╗██║
+██████╔╝╚██████╔╝██║ ╚═╝ ██║██║  ██║██║██║ ╚████║
+╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
+
+domain:       DOMAIN
+status:       ACTIVE
+status:       SHIPPING
+status:       COLLECTING
+
+registrant:   Kukuh Laksana
+country:      ID
+url:          https://kukuh.la
+
+source:       WHOIS.KUKUH.LA
+```
+
+# 🌐 domain — Telegram bot for domain investors
 
 **Open-source Telegram bot for domain portfolio management.** Built for domain investors who want a self-hosted, scriptable control panel for their portfolio — without renting a SaaS.
 
@@ -35,8 +60,8 @@ Talk to [@BotFather](https://t.me/BotFather) on Telegram → `/newbot` → save 
 ### 2. Run with Docker (recommended)
 
 ```bash
-git clone https://github.com/USER/domainer-bot.git
-cd domainer-bot
+git clone https://github.com/kwkuh/domain.git
+cd domain
 cp .env.example .env
 # edit .env, paste BOT_TOKEN
 docker compose up -d
@@ -49,8 +74,8 @@ That's it. Open Telegram, find your bot, send `/help`.
 Requires Node.js 20+ (or Bun).
 
 ```bash
-git clone https://github.com/USER/domainer-bot.git
-cd domainer-bot
+git clone https://github.com/kwkuh/domain.git
+cd domain
 cp .env.example .env  # set BOT_TOKEN
 npm install
 npm run build
@@ -66,7 +91,7 @@ npm run dev
 ### 4. Run with npx (no clone needed)
 
 ```bash
-BOT_TOKEN=xxx npx domainer-bot
+BOT_TOKEN=xxx npx domain
 ```
 
 *(After the package is published to npm.)*

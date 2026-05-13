@@ -1,6 +1,6 @@
 import type { Bot } from "grammy";
 
-const HELP = `🌐 *domainer-bot* — domain portfolio manager
+const HELP = `🌐 *domain* — domain portfolio manager
 
 *Portfolio*
 /add <domain> [--buy=N] [--bin=N] [--tag=a,b]
@@ -75,7 +75,7 @@ const HELP = `🌐 *domainer-bot* — domain portfolio manager
 (send a .csv/.txt/.json file to import)
 
 Self-hosted. Open source. Zero paid APIs.
-github.com/USER/domainer-bot`;
+github.com/kwkuh/domain`;
 
 export function register(bot: Bot) {
   bot.command(["start", "help"], async (ctx) => {
