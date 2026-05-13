@@ -164,7 +164,7 @@ ul{list-style:none;padding:0}li{padding:8px 0;border-bottom:1px solid #eee}
 .p{color:#888;float:right}a{color:#06f;text-decoration:none}</style></head>
 <body><h1>Portfolio</h1><p>${rows.length} domain${rows.length === 1 ? "" : "s"} for sale</p>
 <ul>${items || "<li>(nothing listed)</li>"}</ul>
-<footer style="margin-top:48px;color:#888;font-size:.85rem">Powered by domain.</footer>
+<footer style="margin-top:48px;color:#888;font-size:.85rem">Powered by domainer.</footer>
 </body></html>`;
 }
 
