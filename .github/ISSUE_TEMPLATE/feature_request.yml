@@ -1,0 +1,47 @@
+name: ✨ Feature request
+description: Suggest a new command, integration, or workflow.
+title: "[feat]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the workflow pain or missing capability.
+      placeholder: I can't tell which of my domains are at risk of dropping without manually checking each one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What command, flag, or behavior would solve it?
+      placeholder: A /risk command that flags domains with no traffic, no DNS, and expiry < 90 days.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: I could write a cron script, but I want it inline in the bot.
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Rough scope
+      options:
+        - Tiny — single command, no new deps
+        - Medium — new module, possibly new schema
+        - Large — needs design discussion first
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: paid-api
+    attributes:
+      label: API constraint
+      options:
+        - label: My proposal does NOT require a paid third-party API.
+          required: true

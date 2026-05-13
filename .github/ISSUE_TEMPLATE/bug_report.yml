@@ -1,0 +1,80 @@
+name: 🐛 Bug report
+description: Something broke. File a report so we can fix it.
+title: "[bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. Please fill in as much as you can.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the bug.
+      placeholder: When I run /score on a domain with numbers, the bot replies with NaN.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps to reproduce, ideally with the exact command sent to the bot.
+      placeholder: |
+        1. /add foo123.com
+        2. /score foo123.com
+        3. Reply says "Total: NaN/100"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: A numeric score between 0 and 100.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `node dist/index.js --version` or your git commit SHA.
+      placeholder: "v0.1.0 or 752c7d7"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: How are you running it?
+      options:
+        - Docker (docker-compose)
+        - Node (npm start)
+        - Bun
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node version
+      placeholder: "v22.4.0"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste stdout/stderr from the bot. Redact tokens!
+      render: shell
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and didn't find a duplicate.
+          required: true
+        - label: I'm running the latest `main` (or specified the version above).
+          required: true

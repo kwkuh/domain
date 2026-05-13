@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/kwkuh/domain/discussions
+    about: Ask questions, share setups, request features informally.
+  - name: 🔒 Security report
+    url: https://github.com/kwkuh/domain/security/advisories/new
+    about: Privately report a vulnerability via GitHub Security Advisories.
