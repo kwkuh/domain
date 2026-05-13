@@ -28,10 +28,11 @@ source:       github.com/kwkuh/domain
 
 **The open-source domain portfolio manager that lives in your Telegram.**
 
-[![CI](https://github.com/kwkuh/domain/actions/workflows/ci.yml/badge.svg)](https://github.com/kwkuh/domain/actions/workflows/ci.yml)
-[![Docker](https://github.com/kwkuh/domain/actions/workflows/docker.yml/badge.svg)](https://github.com/kwkuh/domain/pkgs/container/domainer)
-[![npm](https://img.shields.io/npm/v/%40kwkuh%2Fdomainer?logo=npm&label=npm)](https://www.npmjs.com/package/@kwkuh/domainer)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%E2%89%A520-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Zero paid APIs](https://img.shields.io/badge/paid%20APIs-zero-success)](#-features)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![GitHub Stars](https://img.shields.io/github/stars/kwkuh/domain?style=social)](https://github.com/kwkuh/domain/stargazers)
 
 [Quick start](#-quick-start) · [Commands](#-commands) · [Self-hosting](#%EF%B8%8F-self-hosting) · [Why](#-why-domainer) · [Roadmap](#%EF%B8%8F-roadmap) · [Contributing](CONTRIBUTING.md)
