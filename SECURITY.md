@@ -8,7 +8,7 @@ Until a stable 1.0 release, only the latest `main` branch receives security fixe
 
 **Please do not report security vulnerabilities through public GitHub issues.**
 
-Use [GitHub Security Advisories](https://github.com/kwkuh/domain/security/advisories/new) to file a private report.
+Use [GitHub Security Advisories](https://github.com/kwkuh/domainer/security/advisories/new) to file a private report.
 
 When reporting, please include:
 

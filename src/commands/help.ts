@@ -75,7 +75,7 @@ const HELP = `🌐 *Domainer* — domain portfolio manager
 (send a .csv/.txt/.json file to import)
 
 Self-hosted. Open source. Zero paid APIs.
-github.com/kwkuh/domain`;
+github.com/kwkuh/domainer`;
 
 export function register(bot: Bot) {
   bot.command(["start", "help"], async (ctx) => {

@@ -21,7 +21,7 @@ status:       COLLECTING
 registrant:   Kukuh Laksana
 country:      ID
 
-source:       github.com/kwkuh/domain
+source:       github.com/kwkuh/domainer
 ```
 
 # Domainer
@@ -33,7 +33,7 @@ source:       github.com/kwkuh/domain
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Zero paid APIs](https://img.shields.io/badge/paid%20APIs-zero-success)](#-features)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub Stars](https://img.shields.io/github/stars/kwkuh/domain?style=social)](https://github.com/kwkuh/domain/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/kwkuh/domainer?style=social)](https://github.com/kwkuh/domainer/stargazers)
 
 [Quick start](#-quick-start) · [Commands](#-commands) · [Self-hosting](#%EF%B8%8F-self-hosting) · [Why](#-why-domainer) · [Roadmap](#%EF%B8%8F-roadmap) · [Contributing](CONTRIBUTING.md)
 
@@ -68,8 +68,8 @@ source:       github.com/kwkuh/domain
 The fastest way is Docker. You'll need a Telegram bot token from [@BotFather](https://t.me/BotFather).
 
 ```bash
-git clone https://github.com/kwkuh/domain.git
-cd domain
+git clone https://github.com/kwkuh/domainer.git
+cd domainer
 cp .env.example .env       # paste your BOT_TOKEN
 docker compose up -d
 ```
@@ -82,8 +82,8 @@ Open Telegram, find your bot, send `/help`. You're in.
 ### From source (Node 20+ or Bun)
 
 ```bash
-git clone https://github.com/kwkuh/domain.git
-cd domain
+git clone https://github.com/kwkuh/domainer.git
+cd domainer
 cp .env.example .env       # paste your BOT_TOKEN
 npm install
 npm run build
@@ -249,7 +249,7 @@ Domainer is the open-source middle ground: **your portfolio, your data, your bot
 - [ ] Read-only web dashboard (same SQLite, optional)
 - [ ] Inbound-offer parser — forward an email, auto-extract the offer
 
-Vote with 👍 on [issues](https://github.com/kwkuh/domain/issues) or open one.
+Vote with 👍 on [issues](https://github.com/kwkuh/domainer/issues) or open one.
 
 ---
 
@@ -263,7 +263,7 @@ Ground rule: **no paid APIs, ever.**
 
 ## 🔐 Security
 
-Please report vulnerabilities privately via [GitHub Security Advisories](https://github.com/kwkuh/domain/security/advisories/new). See [SECURITY.md](SECURITY.md).
+Please report vulnerabilities privately via [GitHub Security Advisories](https://github.com/kwkuh/domainer/security/advisories/new). See [SECURITY.md](SECURITY.md).
 
 ---
 
