@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build & typecheck (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ["20", "22"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Sanity start (token-less smoke)
+        env:
+          BOT_TOKEN: dummy_smoke_token_invalid
+          DATA_DIR: /tmp/domainer-smoke
+        run: |
+          timeout 5 node dist/index.js || code=$?
+          # exit 124 = timeout reached (good — process started)
+          # exit 1   = grammY hit Telegram with bad token (also good — proves it boots)
+          if [ "${code:-0}" -ne 124 ] && [ "${code:-0}" -ne 1 ]; then
+            echo "Unexpected exit: ${code}"
+            exit 1
+          fi
