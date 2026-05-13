@@ -1,0 +1,47 @@
+{
+  "name": "domainer-bot",
+  "version": "0.1.0",
+  "description": "Open-source Telegram bot for domain portfolio management. Zero paid APIs. Self-hosted.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "domainer-bot": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "init": "node dist/cli/init.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.5.0",
+    "dotenv": "^16.4.5",
+    "grammy": "^1.30.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "domain",
+    "portfolio",
+    "whois",
+    "rdap",
+    "domainer",
+    "domain-investor",
+    "self-hosted"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/USER/domainer-bot"
+  }
+}
