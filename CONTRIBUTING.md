@@ -13,7 +13,7 @@ First off, thank you. Domainer is built by and for domain investors — every PR
 
 ```bash
 git clone https://github.com/kwkuh/domain-portfolio.git
-cd domainer
+cd domain-portfolio
 cp .env.example .env  # paste a BOT_TOKEN from @BotFather
 npm install
 npm run dev           # hot-reload TS via tsx

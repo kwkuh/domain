@@ -56,7 +56,7 @@ The fastest way is Docker. You'll need a Telegram bot token from [@BotFather](ht
 
 ```bash
 git clone https://github.com/kwkuh/domain-portfolio.git
-cd domainer
+cd domain-portfolio
 cp .env.example .env       # paste your BOT_TOKEN
 docker compose up -d
 ```
@@ -70,7 +70,7 @@ Open Telegram, find your bot, send `/help`. You're in.
 
 ```bash
 git clone https://github.com/kwkuh/domain-portfolio.git
-cd domainer
+cd domain-portfolio
 cp .env.example .env       # paste your BOT_TOKEN
 npm install
 npm run build
