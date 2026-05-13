@@ -1,7 +1,7 @@
 services:
   bot:
     build: .
-    container_name: domain
+    container_name: domainer
     restart: unless-stopped
     env_file: .env
     volumes:

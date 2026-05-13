@@ -88,7 +88,7 @@ bot.api.setMyCommands([
 
 startCron(bot);
 
-console.log("🌐 domain starting…");
+console.log("🌐 Domainer starting…");
 bot.start({
   drop_pending_updates: true,
   onStart: (me) => console.log(`Listening as @${me.username}`),

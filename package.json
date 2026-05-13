@@ -1,13 +1,13 @@
 {
-  "name": "@kwkuh/domain",
+  "name": "@kwkuh/domainer",
   "version": "0.1.0",
-  "description": "Open-source Telegram bot for domain portfolio management. Zero paid APIs. Self-hosted.",
+  "description": "Domainer — open-source Telegram bot for domain portfolio management. Zero paid APIs. Self-hosted.",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "domain": "./dist/index.js",
-    "domain-cli": "./dist/cli.js",
-    "domain-server": "./dist/server.js"
+    "domainer": "./dist/index.js",
+    "domainer-cli": "./dist/cli.js",
+    "domainer-server": "./dist/server.js"
   },
   "main": "./dist/index.js",
   "scripts": {

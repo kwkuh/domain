@@ -1,6 +1,6 @@
 import type { Bot } from "grammy";
 
-const HELP = `🌐 *domain* — domain portfolio manager
+const HELP = `🌐 *Domainer* — domain portfolio manager
 
 *Portfolio*
 /add <domain> [--buy=N] [--bin=N] [--tag=a,b]

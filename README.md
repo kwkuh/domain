@@ -23,7 +23,7 @@ url:          https://kukuh.la
 source:       WHOIS.KUKUH.LA
 ```
 
-# 🌐 domain — Telegram bot for domain investors
+# 🌐 Domainer — Telegram bot for domain investors
 
 **Open-source Telegram bot for domain portfolio management.** Built for domain investors who want a self-hosted, scriptable control panel for their portfolio — without renting a SaaS.
 
@@ -91,7 +91,7 @@ npm run dev
 ### 4. Run with npx (no clone needed)
 
 ```bash
-BOT_TOKEN=xxx npx domain
+BOT_TOKEN=xxx npx @kwkuh/domainer
 ```
 
 *(After the package is published to npm.)*
