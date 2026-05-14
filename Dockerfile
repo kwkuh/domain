@@ -1,4 +1,4 @@
-FROM node:20-alpine AS build
+FROM node:26-alpine AS build
 WORKDIR /app
 RUN apk add --no-cache python3 make g++
 COPY package.json ./
@@ -7,7 +7,7 @@ COPY tsconfig.json ./
 COPY src ./src
 RUN npm run build
 
-FROM node:20-alpine
+FROM node:26-alpine
 WORKDIR /app
 RUN apk add --no-cache tini
 COPY --from=build /app/node_modules ./node_modules
